@@ -25,75 +25,81 @@
         circles is unmatched. Under you can enjoy two different renditions of a
         classic art piece. Try to hover the sun for some excitement in life.
       </p>
-      <h2>En aften på glattisen (svg)</h2>
-      <svg width="900" height="500">
-        <rect
-          x="50"
-          y="20"
-          rx="20"
-          ry="20"
-          width="800"
-          height="400"
-          style="fill: turquoise; stroke: black; stroke-width: 5"
-        />
-        <rect
-          x="60"
-          y="250"
-          width="280"
-          height="100"
-          style="fill: black; stroke: black; stroke-width: 5"
-        >
-          <animate
-            attributeName="x"
-            values="60;560;60"
-            dur="10s"
-            repeatCount="indefinite"
-          />
-        </rect>
-        <circle
-          cx="100"
-          cy="380"
-          r="40"
-          fill="red"
-          stroke="black"
-          stroke-width="1"
-        >
-          <animate
-            attributeName="cx"
-            values="100;600;100"
-            dur="10s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        <circle
-          cx="300"
-          cy="380"
-          r="40"
-          fill="red"
-          stroke="black"
-          stroke-width="1"
-        >
-          <animate
-            attributeName="cx"
-            values="300;800;300"
-            dur="10s"
-            repeatCount="indefinite"
-          />
-        </circle>
-        <circle id="sun" cx="800" cy="70" r="40" fill="yellow" />
-      </svg>
-      <h2>En aften på glattisen (canvas).</h2>
-      <canvas
-        id="canvas"
-        width="800"
-        height="400"
-        style="
-          border: 5px solid black;
-          border-radius: 20px;
-          background-color: turquoise;
-        "
-      >
-      </canvas>
+      <div class="images-container">
+        <div class="image-container svg-container">
+          <h2>En aften på glattisen (svg)</h2>
+          <svg width="600" height="450">
+            <rect
+              x="50"
+              y="20"
+              rx="20"
+              ry="20"
+              width="500"
+              height="400"
+              style="fill: turquoise; stroke: black; stroke-width: 5"
+            />
+            <rect
+              x="60"
+              y="250"
+              width="280"
+              height="100"
+              style="fill: black; stroke: black; stroke-width: 5"
+            >
+              <animate
+                attributeName="x"
+                values="60;260;60"
+                dur="5s"
+                repeatCount="indefinite"
+              />
+            </rect>
+            <circle
+              cx="100"
+              cy="380"
+              r="40"
+              fill="red"
+              stroke="black"
+              stroke-width="1"
+            >
+              <animate
+                attributeName="cx"
+                values="100;300;100"
+                dur="5s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <circle
+              cx="300"
+              cy="380"
+              r="40"
+              fill="red"
+              stroke="black"
+              stroke-width="1"
+            >
+              <animate
+                attributeName="cx"
+                values="300;500;300"
+                dur="5s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <circle id="sun" cx="500" cy="70" r="40" fill="yellow" />
+          </svg>
+        </div>
+        <div class="image-container">
+          <h2 class="canvas-header">En aften på glattisen (canvas).</h2>
+          <canvas
+            id="canvas"
+            width="500"
+            height="400"
+            style="
+              border: 5px solid black;
+              border-radius: 20px;
+              background-color: turquoise;
+            "
+          >
+          </canvas>
+        </div>
+      </div>
       <button id="documentation-button">Open documentation</button>
       <div id="documentation">
         <h1>Docs</h1>
@@ -123,7 +129,8 @@
           the canvas element. Then we do some math to calculate if the mouse
           position is inside the radius of the circle (sun). If I could change
           one thing it is that the animation speed is just an estimate and not
-          perfectly equal in both pictures.
+          perfectly equal in both pictures. The sizes of the background are also
+          a bit different, but I am overall happy with this result.
         </p>
         <h2>JQuery</h2>
         <p class="description">

@@ -1,12 +1,12 @@
 let xOffset = 0
 let direction = 1
-const speed = 0.7
+const speed = 0.55
 
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
 const sun = {
-  x: 750,
+  x: 450,
   y: 50,
   radius: 40,
   rr: 40 * 40,
@@ -18,7 +18,7 @@ function init() {
 }
 
 const update = () => {
-  if (xOffset >= 480) direction = -1
+  if (xOffset >= 200) direction = -1
   if (xOffset <= 0) direction = 1
   xOffset += 1 * direction * speed
 }
@@ -50,17 +50,17 @@ function draw() {
 
   // tegn svart firkant
   ctx.fillStyle = "black"
-  ctx.fillRect(20 + xOffset, 230, 280, 100)
+  ctx.fillRect(0 + xOffset, 230, 280, 100)
 
   // venstre hjul
   ctx.beginPath()
-  ctx.arc(60 + xOffset, 360, 40, 0, 2 * Math.PI)
+  ctx.arc(40 + xOffset, 360, 40, 0, 2 * Math.PI)
   ctx.stroke()
   ctx.fillStyle = "red"
   ctx.fill()
   // høyre hjul
   ctx.beginPath()
-  ctx.arc(260 + xOffset, 360, 40, 0, 2 * Math.PI)
+  ctx.arc(240 + xOffset, 360, 40, 0, 2 * Math.PI)
   ctx.stroke()
   ctx.fillStyle = "red"
   ctx.fill()

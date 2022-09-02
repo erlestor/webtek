@@ -18,12 +18,19 @@ body {
     rgba(238, 174, 202, 1) 0%,
     rgba(148, 187, 233, 1) 100%
   );
+  min-height: 100vh;
   padding-bottom: 40px;
 }
 
 .description {
   margin: 0 20% 0 20%;
   font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .description {
+    margin: 0 10% 0 10%;
+  }
 }
 
 h1 {
@@ -33,6 +40,17 @@ h1 {
 
 h2 {
   text-align: center;
+}
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
 }
 
 #sun:hover {
@@ -51,4 +69,8 @@ h2 {
 
 #documentation {
   display: none;
+}
+
+.canvas-header {
+  margin-bottom: 40px;
 }
