@@ -10,6 +10,11 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <div class="page">
@@ -17,9 +22,11 @@
       <p class="description">
         Klæbb kunst is the leading artist when it comes to abstract art. His
         mastery of complex shapes such as squares, rectangles, triangles and
-        circles is unmatched.
+        circles is unmatched. Under you can enjoy two different renditions of a
+        classic art piece. Try to hover the sun for some excitement in life.
       </p>
-      <svg width="1000" height="1000">
+      <h2>En aften på glattisen (svg)</h2>
+      <svg width="900" height="500">
         <rect
           x="50"
           y="20"
@@ -27,32 +34,129 @@
           ry="20"
           width="800"
           height="400"
-          style="fill: turquoise; stroke: black; stroke-width: 5; opacity: 0.5"
+          style="fill: turquoise; stroke: black; stroke-width: 5"
         />
         <rect
-          x="50"
-          y="20"
-          width="200"
+          x="60"
+          y="250"
+          width="280"
           height="100"
           style="fill: black; stroke: black; stroke-width: 5"
-        />
+        >
+          <animate
+            attributeName="x"
+            values="60;560;60"
+            dur="10s"
+            repeatCount="indefinite"
+          />
+        </rect>
         <circle
           cx="100"
           cy="380"
           r="40"
-          stroke="black"
-          stroke-width="3"
           fill="red"
-        />
+          stroke="black"
+          stroke-width="1"
+        >
+          <animate
+            attributeName="cx"
+            values="100;600;100"
+            dur="10s"
+            repeatCount="indefinite"
+          />
+        </circle>
         <circle
           cx="300"
           cy="380"
           r="40"
-          stroke="black"
-          stroke-width="3"
           fill="red"
-        />
+          stroke="black"
+          stroke-width="1"
+        >
+          <animate
+            attributeName="cx"
+            values="300;800;300"
+            dur="10s"
+            repeatCount="indefinite"
+          />
+        </circle>
+        <circle id="sun" cx="800" cy="70" r="40" fill="yellow" />
       </svg>
+      <h2>En aften på glattisen (canvas).</h2>
+      <canvas
+        id="canvas"
+        width="800"
+        height="400"
+        style="
+          border: 5px solid black;
+          border-radius: 20px;
+          background-color: turquoise;
+        "
+      >
+      </canvas>
+      <button id="documentation-button">Open documentation</button>
+      <div id="documentation">
+        <h1>Docs</h1>
+        <h2>Flexbox/grid</h2>
+        <p class="description">
+          In this project I've chosen to use flexbox to make the layout easier
+          and more flexible. Since everything is displayed in a column this is
+          mainly for making it easier to center elements etc. The reason I did
+          not use grid was because the design didn't use multiple columns and
+          rows so I could keep it simple. More direct the whole page has
+          display: flex, flex-direction: column and align-items: center.
+        </p>
+        <h2>HTML canvas and SVG</h2>
+        <p class="description">
+          The first picture uses hardcoded SVG in html. I've used the rect and
+          circle tags to make the different elements. To animate I use the
+          animate tag with focus on the x-attribute on the "car". The duration
+          is 10 seconds and changes from left to right.<br /><br />
+          The second picture is me trying to remake the first in canvas. I have
+          a canvas object and then the rest is done in javascript. I used
+          fillRect() to make the rectangles and the circles are drawn using
+          beginPath() and arc(). To animate I update an xOffset variable every
+          time the function is called with small increment so that every time
+          the canvas redraws we move the "car" by adding that small offset to
+          the x value. To do the hover animation on the sun mousemove(e) on the
+          canvas tag triggers checkSunHover() every time the mouse moves within
+          the canvas element. Then we do some math to calculate if the mouse
+          position is inside the radius of the circle (sun). If I could change
+          one thing it is that the animation speed is just an estimate and not
+          perfectly equal in both pictures.
+        </p>
+        <h2>JQuery</h2>
+        <p class="description">
+          JQuery is mainly used to implement the button that hides/shows the
+          documentation. It simply checks if its clicked then sets display to
+          either "block" or "none" in addition to changing the button text.
+        </p>
+        <h2>Cross-browser testing</h2>
+        <p class="description">
+          I've done manual cross-browser testing in chrome and firefox. This
+          includes checking that the functionality works equally onboth sites
+          and that the styling looks equal. I know that some css attributes work
+          different in some browsers so this does not guarantee that it works on
+          all browsers.
+        </p>
+        <h2>Sources</h2>
+        <ul class="description">
+          <li>I am already familiar with html, css and normal javascript</li>
+          <li>
+            For learning the basics of SVG, JQuery and Canvas I've used
+            w3schools.com.
+          </li>
+          For making the hover animation in canvas I used some code from
+          <a
+            href="https://stackoverflow.com/questions/20651385/hover-to-change-color-of-canvas"
+            target="_blank"
+            >Stackoverflow</a
+          >
+        </ul>
+      </div>
     </div>
+    <!-- My Own Scripts -->
+    <script src="canvas.js"></script>
+    <script src="documentation.js"></script>
   </body>
 </html>
